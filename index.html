@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--NOTE: Most Web WorldWind examples use jquery, Bootstrap and requirejs but those technologies are NOT-->
+    <!--required by Web WorldWind. See SimplestExample.html for an example of using Web WorldWind without them.-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script data-main="PlacemarksAndPicking" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+    <!--page title-->
+    <title>Blue Marble</title>
+    <!--Styling-->
+    <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.navbar {
+  background-color: #131313;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar_container {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar_logo {
+  background-color: #fdff77;
+  background-image: linear-gradient(to top, #3e008f 0%, #99fff6 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-text-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 3.2rem;
+}
+
+.navbar_menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+}
+.navbar_links{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    text-decoration: none;
+    height: 100%;
+    transition: all 0.3s ease;  
+}
+
+.navbar_item{
+    height: 80px;
+}
+
+.navbar_links:hover{
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #9518fc;
+}
+
+@media screen and (max-width: 960px){
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar_menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: -1;
+       
+    }
+
+    .navbar_menu.active{
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 45vh;
+        font-size: 2.2rem;
+    }
+
+    #navbar_logo{
+        padding-left: 25px;
+    }
+
+    .navbar_toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #fff;
+    }
+
+    .navbar_item{
+        width: 100%;
+    }
+
+    .navbar_links{
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    .navbar_toggle .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1){
+       transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/*hero section*/
+.hero{
+    background: #000;
+    background: linear-gradient(to right, #161616, #000);
+    padding: 130px 0;
+}
+
+.hero_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90%;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero_heading{
+    font-size: 65px;
+    margin-bottom: 24px;
+    color: #fff;
+}
+
+.hero_heading span{
+/*UI gradients*/
+background: #5433FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A5FECB, #20BDFF, #5433FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background-size: 100%;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+-webkit-text-fill-color: transparent;
+--mo-text-fill-color: transparent
+}
+
+.hero_description{
+    font-size: 60px;
+    background: #59C173;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background-size: 100%;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+-webkit-text-fill-color: transparent;
+-moz-text-fill-color: transparent
+}
+
+.highlight{
+    border-bottom: 4px solid rgb(132, 0, 255);
+}
+
+@media screen and (max-width: 768px){
+    .hero_heading{
+        font-size: 60px;
+    }
+
+    .hero_description{
+        font-size: 40px;
+    }
+}
+
+/*story section*/
+.main{
+    background: #131313;
+    padding: 10rem 0;
+}
+
+.main_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90%;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 30px;
+}
+
+.main_content{
+    color: #fff;
+    width: 100%;
+}
+
+.main_content h1{
+    font-size: 4rem;
+    background-color: #77ffe8;
+  background-image: linear-gradient(to top, #008f77 0%, #086159 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-text-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+
+}
+
+.main_content h2{
+    font-size: 2.3rem;
+    background: #59C173;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+background-size: 100%;
+-webkit-background-clip: text;
+-moz-background-clip: text;
+-webkit-text-fill-color: transparent;
+-moz-text-fill-color: transparent;
+font-weight: 600;
+}
+
+.main_btn{
+    font-weight: 600;
+font-size: 1.8rem;
+padding: 10px 30px;
+border: none;
+border-radius: 4px;
+margin-top: 2rem;
+position: relative;
+transition: all 0.35s;
+outline: none;
+text-decoration: none;
+flex: 1 auto;
+background-image: linear-gradient(45deg, #ace0f9 0%, #fff1eb 51%, #ace0f9 100%);
+color:#fff;
+border-radius:4px;
+background-size: 200% auto;
+box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
+}
+
+.main_btn a{
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    color: #000;
+
+}
+
+
+
+.main_btn:hover{
+    background-position: right center;
+}
+
+.icon_container {
+    text-align: center;
+}
+
+.icon_card{
+    margin: 10px;
+    height: 500px;
+    width: 500px;
+    border-radius:4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background: linear-gradient(to right, #a1ffce, #faffd1); 
+
+}
+.canvas {
+    background: #738678;
+    padding: 10rem 0;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90%;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 30px;
+   
+}
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="#home" id="navbar_logo">Blue Marble</a>
+            <div class="navbar_toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="#home" class="navbar_links" id="home-page">Home</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#story" class="navbar_links" id="story-page">Story</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#team" class="navbar_links" id="team-page">Team</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--hero section-->
+    <div class="hero" id="home">
+        <div class="hero_container">
+            <h1 class="hero_heading"><span>Mapping Space Trash</span></h1>
+            <p class="hero_description">In Real Time</p>
+            <button class="main_btn"><a href="#">Discover</a></button>
+        </div>
+    </div>
+
+    <!--about section-->
+    <div class="main" id="story">
+        <div class="main_container">
+            <div class="icon_container">
+            <div class="icon_card">icon</div>
+        </div>
+        <div class="main_content">
+            <h1>The Story</h1>
+            <h2>The increasing amount of debris orbiting Earth could potentially limit our access
+                to space, impacting not only exploration efforts, but routine aspects of our life on Earth.
+                This web app is a response to the NASA Space app challenge: to develop an open-source geospatial application that
+                displays and locates every known debris object orbiting Earth in real time.</h2>
+            <button class="main_btn"><a href="#">Learn more</a></button>
+        </div>
+    </div>
+</div>
+
+<div class="canvas">
+
+<div class="container">
+   
+    <div class="row">
+        <div class="col-sm-3">
+            <h4>Projection</h4>
+            <div class="dropdown" id="projectionDropdown">
+            </div>
+            <br>
+            <h4>Layers</h4>
+            <div class="list-group" id="layerList">
+            </div>
+            <br>
+            <h4>Destination</h4>
+            <div class="input-group" id="searchBox">
+                <input type="text" class="form-control" placeholder="GoTo" id="searchText"/>
+                <span class="input-group-btn">
+                    <button id="searchButton" class="btn btn-primary" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div class="col-sm-9" id="globe">
+            <canvas id="canvasOne" width="1000" height="1000"
+                    style="width: 100%; height: auto; background-color: black;">
+                Your browser does not support HTML5 Canvas.
+            </canvas>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
