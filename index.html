@@ -439,7 +439,7 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
 }
 
 .team_card{
-    margin: 10px;
+    margin: 6px;
     height: 160px;
     width: 250px;
     border-radius: 4px;
@@ -503,9 +503,22 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
     }
 
     .vid_card iframe{
-        height: 220px;
-        width: 320px;
+        height: 324px;
+        width: 525px;
        border-radius: 5px;
+    }
+    /*project section*/
+    .project_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 50%;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 30px;
     }
 
 /*footer section*/
@@ -543,7 +556,7 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 16px;
+    margin: 10px;
     text-align: left;
     width: 160px;
     box-sizing: border-box;
@@ -585,7 +598,12 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
 }
 
 .footer_media_wrap{
-
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 90%;
+max-width: 1000px;
+margin: 40px auto 0 auto;
 }
 
 
@@ -719,7 +737,7 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
 </div>
 <!--project demo section-->
 <div class="main" id="demo">
-    <div class="main_container">
+    <div class="project_container">
         
         <div class="main_content">
             <h1>Project Demo</h1>
