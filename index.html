@@ -1,8 +1,7 @@
+<!--designed by Sandra Ashipala https://github.com/sajustsmile 03/10/2021-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--NOTE: Most Web WorldWind examples use jquery, Bootstrap and requirejs but those technologies are NOT-->
-    <!--required by Web WorldWind. See SimplestExample.html for an example of using Web WorldWind without them.-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -14,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
     <!--page title-->
     <title>Blue Marble</title>
-    <!--Styling-->
+    <!--styling-->
     <style>
 * {
   box-sizing: border-box;
@@ -492,6 +491,14 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
     grid-template-columns: 1fr 1fr;
 }
 }
+
+@media screen and (max-width:768px){
+.team_wrapper{
+    grid-template-columns: 1fr;
+}
+}
+
+/*footer*/
     </style>
 </head>
 <body>
@@ -571,6 +578,7 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
                 </span>
             </div>
         </div>
+        <br>
         <div class="col-sm-9" id="globe">
             <canvas id="canvasOne" width="1000" height="1000"
                     style="width: 100%; height: auto; background-color: black;">
