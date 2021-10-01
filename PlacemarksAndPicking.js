@@ -84,7 +84,7 @@ requirejs(['./WorldWindShim',
         var n =1;
         var sat = [];
         var satAttrib = [];
-        TLEtoGeo(); 
+        
         createSatelites(n);
            
         //Show Satellite animation
@@ -97,7 +97,8 @@ requirejs(['./WorldWindShim',
             timeIndex = ++timeIndex;
             //placemark = new WorldWind.Placemark(new WorldWind.Position(latitude + timeIndex, longitude , 1e6), true, null);
             for (var i = 0; i < n; i++) {
-                sat[i].position = new WorldWind.Position(latitude+timeIndex , longitude+timeIndex, height);
+                TLEtoGeo(); 
+                sat[i].position = new WorldWind.Position(latitude , longitude, height);
             }
             wwd.redraw();
 
@@ -200,7 +201,7 @@ requirejs(['./WorldWindShim',
             latitude = latitudeDegTLE;
             longitude = longitudeDegTLE;
             height = heightTLE;
-
+            console.log(latitude + ' ' + longitude);
         }
 
 
