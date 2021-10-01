@@ -313,8 +313,6 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
 
 }
 
-
-
 .main_btn:hover{
     background-position: right center;
 }
@@ -498,6 +496,18 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
     grid-template-columns: 1fr;
 }
 }
+
+    .vid_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .vid_card iframe{
+        height: 220px;
+        width: 320px;
+       border-radius: 5px;
+    }
+
     </style>
 </head>
 <body>
@@ -625,6 +635,20 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
               </svg> GitHub</button></a></div>
         </div>
     </div>
+</div>
+
+<div class="main" id="demo">
+    <div class="main_container">
+        
+        <div class="main_content">
+            <h1>Project Demo</h1>
+            <h2>Mapping Space Trash</h2>
+        </div>
+        <div class="vid_container">
+        <div class="vid_card"><iframe src="images/example_demo.mp4" frameborder="2" allowfullscreen></iframe></div>
+    </div>
+    
+</div>
 </div>
 <script src="app.js"></script>
 </body>
