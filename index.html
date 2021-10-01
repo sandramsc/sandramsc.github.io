@@ -352,6 +352,64 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
    
 }
 
+/*mobile responsive*/
+@media screen and (max-width: 1100px){
+    .main-container{
+        display:grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90%;
+    }
+
+    .img_container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .img_card img{
+        height: 420px;
+        width: 420px;
+    }
+
+    .main-content{
+        text-align: center;
+        margin-bottom: 3.7rem;
+    }
+
+    .main_content h1{
+        font-size: 3.2rem;
+        margin-top: 1.2rem;
+    }
+
+    .main_content h2{
+        font-size: 2.208rem;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .img_card img{
+        width: 250px;
+        height: 250px;
+    }
+
+    .main_content h1{
+        font-size: 3.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .main_content h2{
+        font-size: 2.2;
+    }
+
+    .main_btn{
+        padding: 12px 36px;
+        margin: 2.5rem 0;
+    }
+}
+
 
     </style>
 </head>
@@ -397,12 +455,13 @@ box-shadow:0px 0px 15px 0 rgba(0,0,0,.1);
             <h1>The Story</h1>
             <h2>The increasing amount of debris orbiting Earth could potentially limit our access
                 to space, impacting not only exploration efforts, but routine aspects of our life on Earth.
-                This web app is a response to the NASA Space app challenge: to develop an open-source geospatial application that
+                This web app is a response to the NASA Space apps challenge: to develop an open-source geospatial application that
                 displays and locates every known debris object orbiting Earth in real time.</h2>
             <button class="main_btn"><a href="#">Learn more</a></button>
         </div>
     </div>
 </div>
+<!--team section-->
 
 <div class="canvas">
 
