@@ -4,19 +4,17 @@
     <!--designed by Sandra Ashipala https://github.com/sajustsmile for 03/10/2021-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--jquery-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!--jquery-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script data-main="PlacemarksAndPicking" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.min.js"></script>
-
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
-  
     <!--page title-->
     <title>Blue Marble</title>
-    <!--Styling-->
+    <!--styling-->
     <style>
         * {
             box-sizing: border-box;
@@ -696,7 +694,7 @@
         <div class="hero_container">
             <h1 class="hero_heading"><span>Mapping Space Trash</span></h1>
             <p class="hero_description">In Real Time</p>
-            <button class="main_btn"><a href="#">Discover</a></button>
+            <button class="main_btn" id="#story" onClick="document.getElementById('story').scrollIntoView();"><a href="#">Discover</a></button>
         </div>
     </div>
 
@@ -743,7 +741,7 @@
             </div>
             <br>
             <h4>Date & Time</h4>
-        <form action=""><input class="form-control" type="datetime-local" placeholder="select a date & time"></form>
+            <form action=""><input class="form-control" type="datetime-local" placeholder="select a date & time"></form>
         </div>
         <div class="col-sm-9" id="globe">
             <canvas id="canvasOne" width="1000" height="1000"
@@ -851,7 +849,6 @@ config= {
 
 flatpickr("input[type=datetime-local", config);
 
-    
 </script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
