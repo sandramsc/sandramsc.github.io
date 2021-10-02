@@ -47,7 +47,8 @@ View the Demo on YouTube: ADD LINK TO YOUTUBE VID HERE!!!
 | Flatpickr  | Lightweight and powerful datetime picker  |
 | Bootstrap  | Open-source CSS framework                 |
 | jQuery     | JavaScript library                        |
-| Satellite.js | Makes satellite propagation via TLEs possible |
+| Satellite.js | A library which makes satellite propagation via TLEs possible |
+|Moment.js | Lightweight JavaScript date library |
 
 ## Features
 
