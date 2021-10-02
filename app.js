@@ -58,7 +58,7 @@ if ((space && window.innerWidth < 960 && scrollPos < 600) || space){
 window.addEventListener('scroll', highlightMenu);
 window.addEventListener('click', highlightMenu);
 
-//closes momile menu whenhovering over menu item
+//closes momile menu when hovering over menu item
 const hideMobileMenu = () => {
     const menuBars = document.querySelector('.is-active')
     if(window.innerWidth <= 768 && menuBars){
@@ -67,6 +67,8 @@ const hideMobileMenu = () => {
     }
 }
 
-//triggers the above for menuLnks
+//triggers the above for menuLinks
 menuLinks.addEventListener('click', hideMobileMenu);
 navLogo.addEventListener('click', hideMobileMenu);
+
+//initiakk
