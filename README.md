@@ -33,7 +33,8 @@ View the Demo on YouTube: ADD LINK TO YOUTUBE VID HERE!!!
 
 ## Screenshots
 
-SCREENSHOTS HERE!!!!
+![screenshot_1](https://user-images.githubusercontent.com/19821445/135711783-975f36a8-4fd9-43e9-be66-854e1b73ce9a.JPG)
+![screenshot_2](https://user-images.githubusercontent.com/19821445/135711784-5dda03e4-0b42-4d55-b93d-03318f93dee9.JPG)
 
 
 ## Technology Stack
