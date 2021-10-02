@@ -852,6 +852,10 @@ img .logo{
     config ={
         enableTime: true,
         dateFormat: "Y-m-d H:i",
+        altInput: true,
+        //month,day,year, AM/PM
+        altFormat: "F j, Y",
+        dateFormat: "Y-m-d",
     }
     flatpickr("input[type=datetime-local", config);
 </script>
