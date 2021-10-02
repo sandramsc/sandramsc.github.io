@@ -746,6 +746,7 @@ img .logo{
                 </span>
             </div>
             <br>
+            <h4>Date & Time</h4>
             <form><input class="form-control" placeholder="Select a Date & Time" type="datetime-local"></form>
         </div>
         <div class="col-sm-9" id="globe">
@@ -848,7 +849,11 @@ img .logo{
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <!--initialize flatpickr-->
 <script>
-    flatpickr("input[type=datetime-local", {});
+    config ={
+        enableTime: true,
+        dateFormat: "Y-m-d H:i",
+    }
+    flatpickr("input[type=datetime-local", config);
 </script>
 </body>
 </html>
