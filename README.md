@@ -94,3 +94,6 @@ Visit http://localhost:5500 on a Browser to View the App
 ## License
 [![GitLicense](https://gitlicense.com/badge/sajustsmile/sajustsmile.github.io)](https://github.com/sajustsmile/sajustsmile.github.io/blob/master/LICENSE)
 
+## Credits
+⋅⋅* [NASA WorldWind](https://worldwind.arc.nasa.gov/)
+⋅⋅* [Celestrak](http://www.celestrak.com/NORAD/elements/)
