@@ -86,7 +86,6 @@ Visit http://localhost:5500 on a Browser to View the App
 |-------------------------------|---------------------------------|
 | Niharika Khopade              | https://github.com/niharikakhopade |
 | Sandra Ashipala               | https://github.com/sajustsmile  |
-| Chiara Mancarella             | https://github.com/Chiara2804  |
 | Pavan Kalyan                  | https://github.com/mpavankalyan63 |
 | Sahil Dhumale                 | https://github.com/ZeroSSD      |
 
