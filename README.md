@@ -70,7 +70,7 @@ docker-compose up --build
 **Pull image from docker hub:**
 
 ```
-docker pull https://hub.docker.com/repository/docker/talhaabdurrahman/tva
+docker pull https://hub.docker.com/repository/docker/username
 ```
 
 ## Usage
