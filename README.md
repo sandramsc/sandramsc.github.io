@@ -12,7 +12,7 @@ A geospatial app that displays and locates every known debris object orbiting Ea
 
 ## Table of Contents
 
-- [Team Blue Marble](#team-blue marble)
+- [Team Blue Marble](#team-blue-marble)
   - [Application Description](#application-description)
   - [Table of Contents](#table-of-contents)
   - [Project Demo](#demo)
