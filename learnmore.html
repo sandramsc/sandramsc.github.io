@@ -66,14 +66,7 @@
 
         }
         .navbar_links{
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 125px;
-            text-decoration: none;
-            height: 100%;
-            transition: all 0.3s ease;  
+       
         }
 
         .navbar_item{
@@ -167,6 +160,28 @@
             transform: translateY(-8px) rotate(-45deg);
         }
     }
+    #deco{
+        text-align: center;
+            padding: 2rem;
+            width: 100%;
+            display: table;
+            color: white;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 125px;
+            text-decoration: none;
+            height: 100%;
+            transition: all 0.3s ease;  
+            
+    }
+    #deco:hover{
+        outline: none;
+        text-decoration: none;
+    }
+
+    p{ font-size:1.4rem ;}
 
         
         /*story section*/
@@ -445,7 +460,7 @@
             </div>
             <ul class="navbar_menu">
                 <li class="navbar_item">
-                    <a href="index.html" >Home</a>
+                    <a href="index.html" id="deco">Home</a>
                 </li>
             </ul>
         </div>
