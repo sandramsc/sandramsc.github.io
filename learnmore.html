@@ -65,10 +65,7 @@
             list-style: none;
 
         }
-        .navbar_links{
        
-        }
-
         .navbar_item{
             height: 80px;
         }
@@ -109,8 +106,9 @@
             opacity: 1;
             transition: all 0.5s ease;
             z-index: 99;
-            height: 45vh;
+            height: 25vh;
             font-size: 2.2rem;
+           
         }
 
         #navbar_logo{
@@ -136,29 +134,10 @@
             display: table;
         }
 
-        #mobile-menu{
-            position: absolute;
-            top: 20%;
-            right: 5%;
-            transform: translate(5%, 20%);
-        }
+        
 
-        .navbar_toggle .bar {
-            display: block;
-            cursor: pointer;
-        }
 
-        #mobile-menu.is-active .bar:nth-child(2){
-            opacity: 0;
-        }
-
-        #mobile-menu.is-active .bar:nth-child(1){
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        #mobile-menu.is-active .bar:nth-child(3){
-            transform: translateY(-8px) rotate(-45deg);
-        }
+ 
     }
     #deco{
         text-align: center;
@@ -180,6 +159,12 @@
         outline: none;
         text-decoration: none;
     }
+
+    #deco:hover{
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #9518fc;
+        }
 
     p{ font-size:1.4rem ;}
 
@@ -493,9 +478,6 @@
 <!--<div id="rocket_debris">
 <img src="images/rocketdebris.png" alt=""></div>-->
 
-
-
-
 <!--footer section-->
 <div class="footer_container">
   <div class="footer_links">
@@ -515,6 +497,6 @@
 
 </section>
 </div>
-
+<script src="app.js"></script>
 </body>
 </html>
