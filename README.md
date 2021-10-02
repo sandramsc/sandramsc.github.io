@@ -15,23 +15,18 @@ A geospatial app that displays and locates every known debris object orbiting Ea
 <details>
 <summary>Team Blue Marble</summary>
 
-+ Application Description
-+ Table of Contents
++ [Application Description](#application-description)
++ [Table of Contents](#table-of-contents)
++ [Project Demo](#demo)
++ [Screenshots](#screenshots)
++ [Technology Stack](#technology-stack)
++ [Features](#features)
++ [Running](#running)
++ [Usage](#usage)
++ [Collaborators](#collaborators)
++ [License](#license)
 
 </details>
-
-- [Team Blue Marble](#team-blue-marble)
-  - [Application Description](#application-description)
-  - [Table of Contents](#table-of-contents)
-  - [Project Demo](#demo)
-  - [Screenshots](#screenshots)
-  - [Technology Stack](#technology-stack)
-  - [Features](#features)
-  - [Running](#running)
-  - [Usage](#usage)
-  - [Collaborators](#collaborators)
-  - [License](#license)
-
 
 ## Project Demo
 
