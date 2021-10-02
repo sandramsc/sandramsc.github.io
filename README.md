@@ -90,11 +90,11 @@ Visit http://localhost:5500 on a Browser to View the App
 | Pavan Kalyan                  | https://github.com/mpavankalyan63 |
 | Sahil Dhumale                 | https://github.com/ZeroSSD      |
 
-
-## License
-[![GitLicense](https://gitlicense.com/badge/sajustsmile/sajustsmile.github.io)](https://github.com/sajustsmile/sajustsmile.github.io/blob/master/LICENSE)
-
 ## Reference
 * [NASA WorldWind](https://worldwind.arc.nasa.gov/)
 * [Celestrak](http://www.celestrak.com/NORAD/elements/)
 * [Satellite.js](https://github.com/shashwatak/satellite-js)
+
+## License
+[![GitLicense](https://gitlicense.com/badge/sajustsmile/sajustsmile.github.io)](https://github.com/sajustsmile/sajustsmile.github.io/blob/master/LICENSE)
+
