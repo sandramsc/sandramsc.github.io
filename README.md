@@ -1,4 +1,10 @@
-#  Team Blue Marble
+
+<!-- PROJECT TITLE -->
+  <h1 align="center">Team Blue Marble</h1>
+ <h2 2 align="center">
+    Mapping Space Trash In Real Time
+    <br />
+    </h2>
 
 ## Application Description
 
