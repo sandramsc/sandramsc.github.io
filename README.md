@@ -39,9 +39,8 @@ View the Demo on YouTube: ADD LINK TO YOUTUBE VID HERE!!!
 
 ![screenshot_1](https://user-images.githubusercontent.com/19821445/135711783-975f36a8-4fd9-43e9-be66-854e1b73ce9a.JPG)
 ![screenshot_2](https://user-images.githubusercontent.com/19821445/135711784-5dda03e4-0b42-4d55-b93d-03318f93dee9.JPG)
+![screenshot_3](https://user-images.githubusercontent
 ![orbitjunk](https://user-images.githubusercontent.com/19821445/135750740-33bc51a4-03d3-4677-9f9e-6d08054801fb.png)
-![screenshot_3](https://user-images.githubusercontent.com/19821445/135764219-50029ae1-d8cb-4e89-87fa-c5b17a989cd0.jpg)
-
 
 ## Technology Stack
 
@@ -78,7 +77,7 @@ docker-compose up --build
 **Pull image from docker hub:**
 
 ```
-docker pull https://hub.docker.com/repository/docker/mappingorbitaldebris/bluemarble
+docker pull https://hub.docker.com/repository/docker/sajustsmile/bluemarble
 ```
 
 ## Usage
