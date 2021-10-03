@@ -5,11 +5,37 @@
 var DatePicked;
 var fileContentArray=[];
 var TLEFileSelected;
- function redrawOnDemand(dt){
+var DisplayOptions="DEBS";
+
+function redrawOnDemand(dt){
     DatePicked=document.getElementById("debrisDT").value;
     DatePicked=String(DatePicked);
     DatePicked= new Date(DatePicked);
 }
+// function updateDisplayOption(){
+//     if (document.getElementById("SATS").checked){
+//         DisplayOptions="SATS";
+//     }
+//     if (document.getElementById("DEBS").checked){
+//         DisplayOptions="DEBS";
+//     }
+//     if (document.getElementById("BOTH").checked){
+//         DisplayOptions="BOTH";
+//     }
+
+
+// }
+
+function LoadFile() {
+    var oFrame = document.getElementById("frmFile");
+    var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
+    // updateDisplayOption();
+    fileContentArray = strRawContents.split(/\r\n|\n/);
+    TLEFileSelected=true;
+    
+}
+
+
 
 function previewFile() {
     const preview = document.querySelector('txt');
@@ -45,7 +71,7 @@ requirejs(['./WorldWindShim',
         var wwd = new WorldWind.WorldWindow("canvasOne");
         wwd.navigator.lookAtLocation.latitude = 19.07;
         wwd.navigator.lookAtLocation.longitude = 73.37;
-        wwd.navigator.range = 8e7; 
+        wwd.navigator.range = 2e7; 
         // Create and add layers to the WorldWindow.
         var layers = [
             // Imagery layers.
@@ -68,6 +94,7 @@ requirejs(['./WorldWindShim',
         // Define the images we'll use for the placemarks.
         var images = [
             "G1.png",
+            "sat.png"
         ];
 
         var pinLibrary = WorldWind.configuration.baseUrl + "images/pushpins/", // location of the image files
@@ -129,7 +156,7 @@ requirejs(['./WorldWindShim',
            
         //Show Satellite animation
         var timeIndex = 0;
-        var animationStep = 200;
+        var animationStep = 5000;
         function animateTimeSeries() {
 
 
@@ -137,7 +164,7 @@ requirejs(['./WorldWindShim',
             timeIndex = ++timeIndex;
             //calling read TLE and Satellite one more time if the TLE files is selected
             if (TLEFileSelected) 
-            {
+            {   
                 TLEFileSelected = false;
                 n=readTLEDataFile();        
                 createSatelites(n);
@@ -170,15 +197,30 @@ requirejs(['./WorldWindShim',
 
 
                sat[i].altitudeMode = WorldWind.RELATIVE_TO_GROUND;
-               sat[i].imageSource= pinLibrary + images[0];
+
+
+            
+               
                 //placemark.targetVisibility =0;
                 // Create the placemark attributes for this placemark. Note that the attributes differ only by their
                 // image URL.
                 satAttrib[i] = new WorldWind.PlacemarkAttributes(placemarkAttributes);
-                satAttrib[i].imageSource = pinLibrary + images[0];
+                // satAttrib[i].imageSource = pinLibrary + images[0];
+
+                if (satName[i].indexOf("DEB") < 0 ) {
+                    sat[i].imageSource= pinLibrary + images[1];
+                    satAttrib[i].imageSource = pinLibrary + images[1];
+                }
+                else{
+                    sat[i].imageSource= pinLibrary + images[0];
+                    satAttrib[i].imageSource = pinLibrary + images[0];
+                }
+
                 satAttrib[i].drawLeaderLine=false;
                 satAttrib[i].imageColor =  WorldWind.Color.WHITE;
                 
+
+
                 //placemarkAttributes.imageScale=1;
                 sat[i].attributes = satAttrib[i];
                 // Add the placemark to the layer.
@@ -189,6 +231,7 @@ requirejs(['./WorldWindShim',
 
 
                 placemarkLayer.addRenderable(sat[i]);
+                
 
 
             }
@@ -291,36 +334,23 @@ requirejs(['./WorldWindShim',
 
 
         function readTLEDataFile(){
-            // const reader = new FileReader();
-            // var file = new File(["foo"], "Data_2.txt", {
-            //     type: "text/plain",
-            //   });
 
-
-            // reader.addEventListener("load", function () {
-            // fileContentArray = reader.result.split(/\r\n|\n/);
-            //     }, false);
-  
-            // if (file) {
-            //     reader.readAsText(file);
-            // }
-  
-    
+ 
 
             if (fileContentArray.length <= 0) 
             {
                 //if no file chose show two satellites             
                 
-                satName[0] = 'Debris X'
-                satTLE1[0] = '1 25544U 98067A   19156.50900463  .00003075  00000-0  59442-4 0  9992',
-                satTLE2[0] = '2 25544  51.6433  59.2583 0008217  16.4489 347.6017 15.51174618173442';    
+                // satName[0] = 'DEBris X'
+                // satTLE1[0] = '1 25544U 98067A   19156.50900463  .00003075  00000-0  59442-4 0  9992',
+                // satTLE2[0] = '2 25544  51.6433  59.2583 0008217  16.4489 347.6017 15.51174618173442';    
                 
-                //ISS Zarya
-                satName[1] = 'ISS Zarya'
-                satTLE1[1] = '1 25544U 98067A   21274.25816815  .00005249  00000-0  10377-3 0  9993',
-                satTLE2[1] = '2 25544  51.6450 178.2593 0004287  46.8394 104.8068 15.48887264305034';
+                // //ISS Zarya
+                // satName[1] = 'ISS Zarya'
+                // satTLE1[1] = '1 25544U 98067A   21274.25816815  .00005249  00000-0  10377-3 0  9993',
+                // satTLE2[1] = '2 25544  51.6450 178.2593 0004287  46.8394 104.8068 15.48887264305034';
 
-                return 2;
+                return 0;
             }
             else
             {
@@ -329,19 +359,46 @@ requirejs(['./WorldWindShim',
                 var line = 0;
                 while (line <= fileContentArray.length-1)
                 {
-                    
-                    //console.log(line + " --> " + fileContentArray[line]);
-                    satName[satCounter] = fileContentArray[line];
-                    satTLE1[satCounter] = fileContentArray[line+1];
-                    satTLE2[satCounter] = fileContentArray[line+2];    
-                    satCounter++;
+                    if (DisplayOptions=='BOTH'){
+                        satName[satCounter] = fileContentArray[line];
+                        satTLE1[satCounter] = fileContentArray[line+1];
+                        satTLE2[satCounter] = fileContentArray[line+2];    
+                        satCounter++;
+
+                    }
+                    if (DisplayOptions=='SATS'){
+                        //console.log(line + " --> " + fileContentArray[line]);
+                        if (fileContentArray[line].indexOf("DEB") < 0 ) {
+                            satName[satCounter] = fileContentArray[line];
+                            satTLE1[satCounter] = fileContentArray[line+1];
+                            satTLE2[satCounter] = fileContentArray[line+2];    
+                            satCounter++;
+                        }
+ 
+                    }
+
+                    if (DisplayOptions=='DEBS'){
+                        //console.log(line + " --> " + fileContentArray[line]);
+                        if (fileContentArray[line].indexOf("DEB") < 0 ) {
+
+                        }
+                        else //debries
+                        {
+                            satName[satCounter] = fileContentArray[line];
+                            satTLE1[satCounter] = fileContentArray[line+1];
+                            satTLE2[satCounter] = fileContentArray[line+2];    
+                            satCounter++;
+                        }
+                    }
+
+
                     line= line + 3;
                 }
                 return satCounter;
 
             }    
 
-                
+     
 
                  
               

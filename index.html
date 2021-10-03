@@ -771,7 +771,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-3">
-            <h4>Projection</h4>
+            <!-- <h4>Projection</h4>
             <div class="dropdown" id="projectionDropdown">
             </div>
             <br>
@@ -781,25 +781,34 @@
             <br>
             <h4>Destination</h4>
             <div class="input-group" id="searchBox">
-                <input type="text" class="form-control" placeholder="Go to..." id="searchText"/>
+                <input type="text" class="form-control" placeholder="GoTo" id="searchText"/>
                 <span class="input-group-btn">
                     <button id="searchButton" class="btn btn-primary" type="button">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
                 
-            </div>
+            </div> -->
 
              <div>
                 <script type="text/javascript" src="PlacemarksAndPicking.js"></script>
-                <br>
-                <label class="select_date" for="debrisDT">Select a Date</label>
-                <input class="date_picker" type="datetime-local" id="debrisDT" name="debrisDT">
-                <button onclick="redrawOnDemand()" class="btn2">Snapshot in Time</button>
-                <label for="file_upload" class="data_file_upload">
-                <input type="file" onchange="previewFile()">
-                </label>
-                <br>
+                <label for="debrisDT">Select a Date</label>
+                <input type="datetime-local" id="debrisDT" name="debrisDT">
+                <button class="btn2" onclick="redrawOnDemand()">Snapshot in Time</button>
+                <!-- <p>Please select your display option:</p>
+                  <input type="radio" id="SATS" name="SATS" value="SATS">
+                  <label for="SATS">Satellites</label><br>
+                  <input type="radio" id="DEBS" name="DEBS" value="DEBS">
+                  <label for="DEBS">Debris</label><br>
+                  <input type="radio" id="BOTH" name="BOTH" value="BOTH">
+                  <label for="BOTH">Both</label>
+                </p> -->
+                <input type="file" onchange="previewFile()"><br>
+                
+                <iframe id="frmFile" src="Data_2.txt" onload="LoadFile();" style="display: none;"></iframe>
+
+            
+            
             </div>
             
         </div>
