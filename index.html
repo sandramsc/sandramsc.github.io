@@ -14,8 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
     <!--page title-->
     <title>Blue Marble</title>
-     <!--satellite.js-->
-     <script src="satellite.min.js"></script>
+    <!--satellite.js-->
+    <script src="satellite.min.js"></script>
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!--styling-->
     <style>
         * {
@@ -445,6 +447,11 @@
             border-color: #2e6da4;
         }
 
+        .date_picker{
+                width: 28.5rem;
+                height: 35px;
+        }
+
         /*team section*/
         .team {
             background: #131313;
@@ -781,7 +788,7 @@
                 <script type="text/javascript" src="PlacemarksAndPicking.js"></script>
                 <br>
                 <label for="debrisDT">Select a Date</label>
-                <input type="datetime-local" id="debrisDT" name="debrisDT">
+                <input class="date_picker" type="datetime-local" id="debrisDT" name="debrisDT">
                 <button onclick="redrawOnDemand()" class="btn2">Snapshot the Time</button>
                 <label for="file_upload" class="data_file_upload">
                 <input type="file" onchange="previewFile()">
