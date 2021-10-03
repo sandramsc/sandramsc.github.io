@@ -55,7 +55,9 @@ Explore the Web app: https://sajustsmile.github.io
 
 ## Features
 
-1. Users are able to see the orbital environment at a different point in time.
+1. Date & Time Picker which allows a user to see the location of debris at a given point in time. 
+
+2. Choose file options enable users to add their own TLEs (Two Line Elements) in .txt format and the data is in turn plotted on the globe.
 
 ## Running
 
