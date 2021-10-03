@@ -57,7 +57,7 @@ Explore the Web app: https://sajustsmile.github.io
 
 1. Date & Time Picker which allows a user to see the location of debris at a given point in time. 
 
-2. Choose file options enable users to add their own TLEs (Two Line Elements) in .txt format and the data is in turn plotted on the globe.
+2. Choose file option enables users to add their own TLEs (Two Line Elements) in .txt format and the data is in turn plotted on the globe.
 
 ## Running
 
