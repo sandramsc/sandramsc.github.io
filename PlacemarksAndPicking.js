@@ -55,7 +55,7 @@ requirejs(['./WorldWindShim',
             // Add atmosphere layer on top of all base layers.
             {layer: new WorldWind.AtmosphereLayer(), enabled: true},
             // WorldWindow UI layers.
-            {layer: new WorldWind.CompassLayer(), enabled: true},
+            //{layer: new WorldWind.CompassLayer(), enabled: true},
             {layer: new WorldWind.CoordinatesDisplayLayer(wwd), enabled: true},
             {layer: new WorldWind.ViewControlsLayer(wwd), enabled: true}
         ];
@@ -80,7 +80,7 @@ requirejs(['./WorldWindShim',
 	    //mumbai added by mumbaikar Ganesh khopade	
 	    latitude = 19.06,
 	    longitude = 73.40,
-        height=1e6;
+        height = 2e4;
 
         // Set up the common placemark attributes.
         placemarkAttributes.imageScale = 10;
