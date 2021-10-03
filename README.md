@@ -95,7 +95,7 @@ Visit http://localhost:5500 on a Browser to View the App
 
 ## References
 * [NASA WorldWind](https://worldwind.arc.nasa.gov/)
-* [Celestrak](http://www.celestrak.com/NORAD/elements/)
+* [Space-Track](https://www.space-track.org/auth/login)
 * [Satellite.js](https://github.com/shashwatak/satellite-js)
 
 ## License
