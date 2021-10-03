@@ -31,8 +31,6 @@ A geospatial app that displays and locates every known debris object orbiting Ea
 
 ## Project Demo
 
-A Short Video Detailing the Features Implemented in this Application
-
 Explore the Web app: https://sajustsmile.github.io
 
 ## Screenshots
