@@ -453,6 +453,11 @@
                 height: 35px;
         }
 
+        .select_date{
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 17px;
+        }
+
         /*team section*/
         .team {
             background: #131313;
@@ -788,7 +793,7 @@
              <div>
                 <script type="text/javascript" src="PlacemarksAndPicking.js"></script>
                 <br>
-                <label for="debrisDT">Select a Date</label>
+                <label class="select_date" for="debrisDT">Select a Date</label>
                 <input class="date_picker" type="datetime-local" id="debrisDT" name="debrisDT">
                 <button onclick="redrawOnDemand()" class="btn2">Snapshot in Time</button>
                 <label for="file_upload" class="data_file_upload">
