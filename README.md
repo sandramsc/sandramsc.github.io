@@ -91,7 +91,7 @@ Visit http://localhost:5500 on a Browser to View the App
 | Name                          | Link ↘️                         |
 |-------------------------------|---------------------------------|
 | Niharika Khopade              | https://github.com/niharikakhopade |
-| Sandra Ashipala               | https://github.com/sajustsmile  |
+| Sandra Ashipala               | https://github.com/sandramsc  |
 | Pavan Kalyan                  | https://github.com/mpavankalyan63 |
 | Sahil Dhumale                 | https://github.com/ZeroSSD      |
 
@@ -101,5 +101,5 @@ Visit http://localhost:5500 on a Browser to View the App
 * [Satellite.js](https://github.com/shashwatak/satellite-js)
 
 ## License
-[![GitLicense](https://gitlicense.com/badge/sajustsmile/sajustsmile.github.io)](https://github.com/sajustsmile/sajustsmile.github.io/blob/master/LICENSE)
+[![GitLicense](https://gitlicense.com/badge/sandramsc/sandramsc.github.io)](https://github.com/sandramsc/sandramsc.github.io/blob/master/LICENSE)
 
