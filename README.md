@@ -69,17 +69,6 @@ To test the application run the following commands on your terminal:
 clone the repository
 ```
 
-**On docker:**
-
-```
-docker-compose up --build
-```
-**Pull image from docker hub:**
-
-```
-docker pull https://hub.docker.com/repository/docker/sajustsmile/bluemarble
-```
-
 ## Usage
 
 Visit http://localhost:5500 on a Browser to View the App
